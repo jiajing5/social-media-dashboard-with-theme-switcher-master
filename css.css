@@ -1,0 +1,209 @@
+/* .attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); } */
+html, body{
+  margin:0; padding:0; box-sizing:border-box; clear:both;
+  font-family: 'Inter', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.darktheme{
+  --bgcolor: hsl(230, 17%, 14%);
+  --cardbg: hsl(232, 19%, 15%);
+  --textcolor: hsl(228, 34%, 66%);
+  --numbercolor: hsl(0, 0%, 100%);
+  --boxhoverbkcolor:hsl(228, 28%, 20%);
+  --togglebkcolor: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --onoffswitch-switch-right: 16px;
+}
+.lighttheme{
+  --bgcolor: hsl(0, 0%, 100%);
+  --cardbg: hsl(225, 100%, 98%);
+  --textcolor: hsl(228, 12%, 44%);
+  --numbercolor: hsl(230, 17%, 14%);
+  --boxhoverbkcolor:hsl(227, 47%, 96%);
+  --togglebkcolor:hsl(230, 22%, 74%);
+  --onoffswitch-switch-right: 0px;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--textcolor);
+  background-color: var(--bgcolor);
+}
+.titlerow{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.sotoptitle{
+  color:var(--numbercolor);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.modebutton{
+  display: flex;
+  align-items: center;
+}
+.darkmodetext{
+  color: var(--numbercolor);
+}
+.follower-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  height: 11rem;
+  margin-bottom: 2rem;
+}
+.fobox{
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cardbg);
+  border-radius: 5px 5px 5px 5px;
+}
+.fbbox{
+  border-top:hsl(208, 92%, 53%) 5px solid;
+}
+.twbox{
+  border-top:hsl(203, 89%, 53%) 5px solid;
+}
+.igbox{
+  border-top: 5px solid;
+  border-image: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) 1;
+  clip-path: inset(0 round 5px);
+}
+.ytbox{
+  border-top:hsl(348, 97%, 39%) 5px solid;
+}
+.forow, .fo2row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fo2row{
+  flex-direction: column;
+}
+.acount{
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
+.fonumber{
+  color:var(--numbercolor);
+  font-size: 3rem;
+  font-weight: bold;
+}
+.fo{
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.fobox:hover, .ovbox-grid:hover{
+  background-color: var(--boxhoverbkcolor);
+  cursor: pointer;
+}
+.greentext{
+  color:hsl(163, 72%, 41%);
+  font-size: 0.8rem;
+}
+.redtext{
+  color:hsl(356, 69%, 56%);
+  font-size: 0.8rem;
+}
+.ovtoptitle{
+  display: felx;
+  justify-content: star;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--numbercolor);
+}
+.ov-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.ovbox{
+  background-color: var(--cardbg);
+  border-radius: 5px 5px 5px 5px;
+  display: grid;
+  grid-template: 1fr 1fr / 2fr 1fr;
+  padding: 1rem;
+}
+.ovheading{
+  font-size: 0.8rem;
+}
+.ovnumber{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--numbercolor);
+}
+.onoffswitch {
+  margin-left: 10px;
+  position: relative; width: 40px;
+  /* -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none; */
+}
+.onoffswitch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 1px solid #AEB2CB; border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; height: 20px;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  background: var(--togglebkcolor);
+}
+/* 圓圈 */
+.onoffswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: var(--bgcolor);
+  position: absolute; top: 0; bottom: 0;
+  right: var(--onoffswitch-switch-right);
+  border: 1px solid #AEB2CB; border-radius: 20px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: var(--onoffswitch-switch-right); 
+}
+
+@media screen and (max-width:1439px) {
+  html{
+    font-size: 12px;
+  }
+  body{
+    height: auto;
+  }
+  .follower-grid{
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
+    height: 50rem;
+    width: 20rem;
+  }
+  .fobox{
+    height: 12rem;
+  }
+  .ov-grid{
+    grid-template-columns: 1fr;
+    width: 20rem;
+  }
+  .titlerow{
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+  }
+  .modebutton{
+    justify-content: space-between;
+    margin-top: 1rem;
+    border-top: 1px solid hsl(230, 22%, 74%);
+    padding-top: 1rem;
+  }
+}
